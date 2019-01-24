@@ -12,8 +12,22 @@ custom:
  
 functions:
   initialTest:
-    handler: src/functions/initialTest.handler
+    handler: src/functions/getMasters.handler
     events:
       - http:
-          path: api/initialTest/{name}
+          path: api/getMasters/{name}
           method: get
+
+resources:
+  Resources:
+    MastersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.mastersTable}
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: N
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST

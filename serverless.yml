@@ -16,7 +16,7 @@ functions:
     handler: src/functions/getMasters.handler
     events:
       - http:
-          path: api/getMasters/{name}
+          path: api/getMasters
           method: get
 
 resources:

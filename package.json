@@ -23,6 +23,8 @@
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
     "prettier": "^1.14.3",
-    "serverless": "^1.35.1"
+    "serverless": "^1.35.1",
+    "superagent": "^4.1.0",
+    "superagent-promise": "^1.1.0"
   }
 }

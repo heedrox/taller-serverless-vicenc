@@ -1,4 +1,8 @@
 service: pufouniversity
+
+plugins:
+  - serverless-pseudo-parameters
+  - serverless-iam-roles-per-function
  
 provider:
   name: aws
@@ -16,8 +20,14 @@ functions:
     handler: src/functions/getMasters.handler
     events:
       - http:
-          path: api/getMasters
+          path: api/masters
           method: get
+    environment:
+      mastersTable: ${self:custom.mastersTable}
+    iamRoleStatements:
+      - Effect: Allow
+        Action: dynamodb:scan
+        Resource: arn:aws:dynamodb:#{AWS::Region}:#{AWS::AccountId}:table/${self:custom.mastersTable}
 
 resources:
   Resources:

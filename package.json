@@ -10,7 +10,8 @@
     "test:integration": "TEST_MODE=handler jest ./tests/*",
     "pretest": "npm run lint",
     "posttest": "npm audit",
-    "deploy": "serverless deploy --aws-profile serverless-local"
+    "deploy": "serverless deploy --aws-profile serverless-local",
+    "seedMasters": "node seedMasters.js masters-dev"
   },
   "author": "Vicenc Garcia Altes",
   "license": "MIT",

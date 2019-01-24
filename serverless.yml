@@ -9,6 +9,7 @@ provider:
 custom:
   defaultRegion: eu-west-1
   stage: ${opt:stage, self:provider.stage}
+  mastersTable: masters-${self:custom.stage}
  
 functions:
   initialTest:
